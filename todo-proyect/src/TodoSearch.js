@@ -1,9 +1,20 @@
 import React from 'react';
 
-function TodoSearch () {
-    return (
-        <input placeholder="Cebolla" />
-    );
-}
+function TodoSearch({searchValue, setSearchValue}) {
+    
 
-export {TodoSearch};
+    const onSearchValueChange = (event) => {
+        console.log(event.target.value);
+        setSearchValue(event.target.value);
+    }
+
+    return (
+            <input
+            onChange={onSearchValueChange}
+            placeholder="Cebolla"
+            value={searchValue}
+        />
+    );
+} 
+
+export { TodoSearch }
